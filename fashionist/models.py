@@ -9,8 +9,12 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    picture=models.CharField(max_length=500)
+    link=models.CharField(max_length=500, default='')
+    
     #Link zu Kleidungsstücken, z.B. Amazon
     #Likes
+    #pictures
 
     def publish(self):
         self.published_date = timezone.now()
@@ -18,3 +22,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class About_Me(models.Model):
+    name=models.CharField(max_length=200, default='')
+    age=models.CharField(max_length=200, default='')
+    hobbies=models.CharField(max_length=200, default='')
+    favourite_food=models.CharField(max_length=200, default='')
+    about_me=models.TextField(default='')
