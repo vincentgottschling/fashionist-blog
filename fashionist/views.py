@@ -9,11 +9,6 @@ from django.shortcuts import redirect
 def news(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     isEvenNumber={}
-    for post in posts:
-        if post.pk%2==0:
-            isEvenNumber[post.pk]=True
-        else:
-            isEvenNumber[post.pk]=False
     return render(request, 'fashionist/news.html', {'posts': posts,'isEvenNumber':isEvenNumber})
 
 def news_detail(request, pk):
