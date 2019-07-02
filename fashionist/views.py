@@ -6,10 +6,13 @@ from .forms import PostForm, InfoForm
 from django.shortcuts import redirect
 
 
-def news(request):
+def frontpage(request):
+    return render(request, 'fashionist/frontpage.html')
+
+def trends(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     isEvenNumber={}
-    return render(request, 'fashionist/news.html', {'posts': posts,'isEvenNumber':isEvenNumber})
+    return render(request, 'fashionist/trends.html', {'posts': posts,'isEvenNumber':isEvenNumber})
 
 def news_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)

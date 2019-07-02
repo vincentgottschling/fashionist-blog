@@ -6,6 +6,11 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/fashionist.css' %}">
+        <script>
+            <!--
+            ... hier kommt das JavaScript-Programm
+            -->
+        </script> 
 
     </head>
     <body>
@@ -13,17 +18,26 @@
                 {% if user.is_authenticated %}
                     <a href="{% url 'new_news' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
                 {% endif %}
-                <h1 style='text-align:center;'><a href="/"><img src="https://i.ibb.co/qrpyPdP/d2db7109-e68a-4c8a-8a0c-bc6c6315c8d9-200x200.png" alt=""  height="100" width="100">&nbsp;&nbsp;Livias Life</a></h1>
+                <h1 style='text-align:center;'><a href="/"><img src="https://i.ibb.co/0tTjZYr/Bildschirmfoto-2019-07-02-um-15-27-38.png" alt="" ></a><br /></a></h1>
 
-                    <div class="categories">
-                        <p style='text-align:center;'>Trends &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Guide &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lifestyle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a></p>                               
-                    </div>
-
+                    
                 
             </div>
-        </div>
-        <div class="content container">
+            
+            <div class="categories">
+                <hr>
+                <p style='text-align:center;'> 
+                <a href="/trends/">Trends</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Guide &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lifestyle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a>
+                </p>    
+                <hr>                           
+            </div>
+            <img src="https://www.bilder-upload.eu/upload/03bce8-1562073294.jpg" class="img-responsive" alt="" >
+            
+
+        <div class="container">
             <div class="row">
                 {% block content %}
                 {% endblock %}

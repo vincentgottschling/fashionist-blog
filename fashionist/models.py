@@ -10,7 +10,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     picture=models.CharField(max_length=500)
-    link=models.CharField(max_length=500, default='')
+    link=models.CharField(max_length=500, default='', blank=True)
     
     #Link zu Kleidungsstücken, z.B. Amazon
     #Likes

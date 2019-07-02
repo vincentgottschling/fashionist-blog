@@ -3,23 +3,29 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="post">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-                <br>
-                <br>
-                <p><img src="{{post.picture}}" alt="" height="333" width="500"></p>
-            </div>
-            <div class="col-md-4">
-                <h1><a href="{% url 'news_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-                <div class="date">
-                    {{ post.published_date }}
+    <div class="col-md-12">
+        <div class="row">
+            <div class="post">
+                <div class="col-sm-6">
+                    <div class="col-lg-3 col-sm-1 "></div>
+                    <div class="col-lg-9 col-sm-11">
+                        <br>
+                        <br>
+                        <p><img src="{{post.picture}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></p>
+                    </div>
                 </div>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p><a href="{{post.link}}">{{post.link}}</a></p>
+                <div class="col-lg-4 col-sm-5">
+                    <br>
+                    <h1><a href="{% url 'news_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                    <div class="date">
+                        {{ post.published_date }}
+                    </div>
+                    <p>{{ post.text|linebreaksbr|truncatechars:350 }}</p>
+                </div>
+                <div class="col-lg-2 col-sm-1"></div>
             </div>
-        </div>
-
+        </div>    
+    </div>
     {% endfor %}
 {% endblock %}
 
