@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/fashionist.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
         <script>
             <!--
             ... hier kommt das JavaScript-Programm
@@ -18,7 +19,7 @@
                 {% if user.is_authenticated %}
                     <a href="{% url 'new_news' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
                 {% endif %}
-                <h1 style='text-align:center;'><a href="/"><img src="https://i.ibb.co/0tTjZYr/Bildschirmfoto-2019-07-02-um-15-27-38.png" alt="" ></a><br /></a></h1>
+                <h1 style='text-align:center;'><a href="/">Livias Life</a></h1>
 
                     
                 
@@ -32,7 +33,7 @@
                 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lifestyle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a>
                 </p>    
-                <hr>                           
+                <hr id="hr-bottom">                           
             </div>
             <img src="https://www.bilder-upload.eu/upload/03bce8-1562073294.jpg" class="img-responsive" alt="" >
             
