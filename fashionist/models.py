@@ -9,8 +9,9 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    picture=models.CharField(max_length=500)
+    picture=models.CharField(max_length=500, blank=True)
     link=models.CharField(max_length=500, default='', blank=True)
+    image = models.ImageField(upload_to='images/', default="C:/Users/vince/Desktop/fashionist/Bilder/Logo.png")
     
     #Link zu Kleidungsstücken, z.B. Amazon
     #Likes

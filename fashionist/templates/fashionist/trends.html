@@ -11,7 +11,9 @@
                     <div class="col-lg-9 col-sm-11">
                         <br>
                         <br>
-                        <p><img src="{{post.picture}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></p>
+                        {% if post.image %}
+                            <p><img src="{{post.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></p>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-5">

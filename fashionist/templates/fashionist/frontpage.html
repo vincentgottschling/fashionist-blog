@@ -1,5 +1,38 @@
 {% extends 'fashionist/base.html' %}
 
-{% block content %}
 
+{% block content %}
+    <div class="startpage-img">
+        <img src="https://www.bilder-upload.eu/upload/03bce8-1562073294.jpg"  class="img-responsive" id="startpage-img" alt="" >
+    </div>
+    {% for post in posts %}
+    
+    <div class="frontpage">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="post">
+                    <div class="col-sm-6">
+                        <div class="col-md-3 col-sm-2 "></div>
+                        <div class="col-md-9 col-sm-10">
+                            <br>
+                            <br>
+                            {% if post.image %}
+                                <p><img src="{{post.image.url}}" class="img-responsive" id="image-post" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5">
+                        <br>
+                        <h1><a href="{% url 'news_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                        <div class="date">
+                            {{ post.published_date }}
+                        </div>
+                        <p>{{ post.text|linebreaksbr|truncatechars:350 }}</p>
+                    </div>
+                    <div class="col-md-2 col-sm-1"></div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}

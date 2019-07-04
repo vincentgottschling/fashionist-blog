@@ -7,12 +7,12 @@ from django.shortcuts import redirect
 
 
 def frontpage(request):
-    return render(request, 'fashionist/frontpage.html')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'fashionist/frontpage.html', {'posts': posts})
 
 def trends(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    isEvenNumber={}
-    return render(request, 'fashionist/trends.html', {'posts': posts,'isEvenNumber':isEvenNumber})
+    return render(request, 'fashionist/trends.html', {'posts': posts})
 
 def news_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -20,7 +20,7 @@ def news_detail(request, pk):
 
 def new_news(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -34,7 +34,7 @@ def new_news(request):
 def news_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST,    request.FILES,instance=post)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
