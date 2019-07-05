@@ -16,5 +16,11 @@ class InfoForm(forms.ModelForm):
 class EventsForm(forms.ModelForm):
 
     class Meta:
-         model = Events
-         fields = ('title', 'text','event_date','event_time','image')
+        model = Events
+        fields = ('title', 'text','event_date','event_time','image')
+        labels = {
+            "event_date": "Date of the Event ('DD.MM.YYYY')"
+        }
+
+
+         
