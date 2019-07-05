@@ -31,3 +31,11 @@ class About_Me(models.Model):
     hobbies=models.CharField(max_length=200, default='')
     favourite_food=models.CharField(max_length=200, default='')
     about_me=models.TextField(default='')
+
+class Events(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    event_date=models.DateField()
+    event_time=models.TimeField()
+    image = models.ImageField(upload_to='images/', blank=True)

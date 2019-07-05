@@ -1,0 +1,42 @@
+{% extends 'fashionist/base.html' %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        {% if user.is_authenticated %}
+            <a href="{% url 'new_events' %}" class="new-event"><span class="badge badge-secondary">New</span></a> 
+        {% endif %} 
+        <div class="col-md-10"></div>
+    </div>
+        
+    {% for event in events %}
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="events">
+                
+                <br>
+                {% if user.is_authenticated %}
+                    <a class="btn btn-default" href="{% url 'events_edit' pk=event.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                {% endif %}
+                <h1>{{ event.title }}</h1>
+                {% if event.image %}
+                <p><img src="{{event.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></p>
+                {% endif %}
+
+                <div class="date-event">
+                    {{ event.event_date }}
+                </div>
+                <div class="time">
+                    {{ event.event_time }}
+                </div>
+                <div class="text">
+                    <p>{{ event.text|linebreaksbr }}</p>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'fashionist/base.html' %}
 
 {% block content %}
-    <div class="col-md-4"></div>
+    <div class="col-md-2"></div>
     <div class="col-md-8">
         <div class="post">
             
@@ -15,11 +15,14 @@
                     {{ post.published_date }}
                 </div>
             {% endif %}
-            <p><img src="{{post.image.url}}" alt="" height="333" width="500"></p>
+            {% if post.image %}
+                <p><img src="{{post.image.url}}" class="img-responsive" alt="" ></p>
+            {% endif %}
             <p>{{ post.text|linebreaksbr }}</p>
             <br><br>
             <p>Link zu diesem Thema:</p>
             <p><a href="{{post.link}}">{{post.link}}</a></p>
         </div>
     </div>
+
 {% endblock %}

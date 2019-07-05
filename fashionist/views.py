@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post, About_Me
+from .models import Post, About_Me, Events
 from django.shortcuts import render, get_object_or_404
-from .forms import PostForm, InfoForm
+from .forms import PostForm, InfoForm, EventsForm
 from django.shortcuts import redirect
 
 
@@ -72,6 +72,33 @@ def edit_info(request):
             form = InfoForm(instance=info)
         return render(request, 'fashionist/edit_info.html', {'form': form})
 
+def events(request):
+    events = Events.objects.filter(event_date__gte=timezone.now()).order_by('event_date')
+    return render(request, 'fashionist/events.html', {'events': events})
 
 
+def new_events(request):
+    if request.method == "POST":
+        form = EventsForm(request.POST, request.FILES)
+        if form.is_valid():
+            events = form.save(commit=False)
+            events.author = request.user
+            events.save()
+            return redirect('events')
+    else:
+        form = EventsForm()
+    return render(request, 'fashionist/events_edit.html', {'form': form})
 
+
+def events_edit(request, pk):
+    event = get_object_or_404(Events, pk=pk)
+    if request.method == "POST":
+        form = EventsForm(request.POST, request.FILES,instance=event)
+        if form.is_valid():
+            events = form.save(commit=False)
+            events.author = request.user
+            events.save()
+            return redirect('events')
+    else:
+        form = EventsForm(instance=event)
+    return render(request, 'fashionist/events_edit.html', {'form': form})
