@@ -38,4 +38,5 @@ class Events(models.Model):
     text = models.TextField()
     event_date=models.DateField()
     event_time=models.TimeField()
+    location=models.CharField(max_length=200, blank=True)
     image = models.ImageField(upload_to='images/', blank=True)

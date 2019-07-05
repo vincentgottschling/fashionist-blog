@@ -30,6 +30,11 @@
                 <div class="time">
                     {{ event.event_time }}
                 </div>
+                {% if event.location %}
+                <div class="location">
+                    {{event.location}}
+                </div>
+                {% endif %}
                 <div class="text">
                     <p>{{ event.text|linebreaksbr }}</p>
                 </div>
