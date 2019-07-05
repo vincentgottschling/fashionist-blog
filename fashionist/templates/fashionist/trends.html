@@ -1,0 +1,88 @@
+{% extends 'fashionist/base.html' %}
+
+
+{% block content %}
+    {% for post in posts %}
+    <div class="col-md-12">
+        <div class="row">
+            <div class="post">
+                <div class="col-sm-6">
+                    <div class="col-lg-3 col-sm-1 "></div>
+                    <div class="col-lg-9 col-sm-11">
+                        <br>
+                        <br>
+                        {% if post.image %}
+                            <p><img src="{{post.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-5">
+                    <br>
+                    <h1><a href="{% url 'news_detail' pk=post.pk %}" class="post-title">{{ post.title }}</a></h1>
+                    <div class="date">
+                        {{ post.published_date }}
+                    </div>
+                    <div class="text">
+                        <p>{{ post.text|linebreaksbr|truncatechars:350 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-1"></div>
+            </div>
+        </div>    
+    </div>
+    {% endfor %}
+{% endblock %}
+
+<!--
+{% load static %}
+<html>
+    <head>
+        <title>Fashionist</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/fashionist.css' %}">
+
+    </head>
+    <body>
+            <div class="page-header">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'new_news' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
+                {% endif %}
+                <h1 style='text-align:center;'><a href="/"><img src="https://i.ibb.co/qrpyPdP/d2db7109-e68a-4c8a-8a0c-bc6c6315c8d9-200x200.png" alt=""  height="100" width="100">&nbsp;&nbsp;Livias Life</a></h1>
+                <div class="categories" style='text-align:center;'>
+                    <p style='text-align:center;'>Neues &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Guide &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lifestyle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a></p>            
+                </div>
+            </div>
+        </div>
+        <div class="content container">
+            <div class="main">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="row">
+                        {% if isEvenNumber %}
+                            <div class="col-md-2"></div>
+                            <div class="col-md-6">
+                                <p><img src="{{post.picture}}" alt="" height="333" width="500"></p>
+                            </div>
+                            <div class="col-md-4">
+                                <h1><a href="{% url 'news_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                                <div class="date">
+                                    {{ post.published_date }}
+                                </div>
+                                <p>{{ post.text|linebreaksbr }}</p>
+                                <p><a href="{{post.link}}">{{post.link}}</a></p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+
+        </div>
+    </body>
+</html>
+
+-->

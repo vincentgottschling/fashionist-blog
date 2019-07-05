@@ -1,35 +1,95 @@
 {% load static %}
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Fashionist</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Parisienne|Yellowtail&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/fashionist.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Yeseva+One&display=swap" rel="stylesheet">
+        
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+        
+    
+
 
     </head>
     <body>
-            <div class="page-header">
-                {% if user.is_authenticated %}
-                    <a href="{% url 'new_news' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
-                {% endif %}
-                <h1 style='text-align:center;'><a href="/"><img src="https://i.ibb.co/qrpyPdP/d2db7109-e68a-4c8a-8a0c-bc6c6315c8d9-200x200.png" alt=""  height="100" width="100">&nbsp;&nbsp;Livias Life</a></h1>
+            <!--<div class="categories">-->
+                <!--<a href="/trends/">Trends</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/">Guide</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Lifestyle</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a>-->
+                <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-                    <div class="categories">
-                        <p style='text-align:center;'>Trends &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Guide &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lifestyle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a></p>                               
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> 
+                        </button>
                     </div>
 
+                    <div class="navbar-collapse collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/trends/">Trends</a></li>
+                                <li><a href="/">Guide</a></li>
+                                <li><a href="/">Lifestyle</a></li>
+                                <li><a href="/events/">Events</a></li>
+                                <li><a href="/about_me/">About Me</a></li>
+                            </ul>
+
+                    </div>
+                </div> 
+                {% if user.is_authenticated %}
+                    <a href="{% url 'new_news' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
+                {% endif %}                 
+            <!--</div>-->
+            
+
+
+            <div class="page-header">
+                <h1 style='text-align:center;'><a href="/"><img src="https://i.ibb.co/kH6vQPC/Bildschirmfoto-2019-07-02-um-20-51-03.png" id="logo" alt="Bildschirmfoto-2019-07-02-um-20-51-03" height="150" width="200"></a></h1>
+
+                    
                 
             </div>
-        </div>
-        <div class="content container">
+
+            
+            
+            
+
+        <div class="container">
             <div class="row">
                 {% block content %}
                 {% endblock %}
                 </div>
             </div>
         </div>
+        <br>
+        <div class="second-last-balken">
+            <br>
+            <br>
+        </div>
+        <div class="last-balken">
+            <br>
+            <br>
+            <h1 class="last-bar" text-align="center"><a href="#top" class="to-top">Livia's Life</a></h1>
+            <br>
+            <br>
+        </div> 
     </body>
 </html>
 <!-- Fertig? -->

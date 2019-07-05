@@ -9,8 +9,9 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    picture=models.CharField(max_length=500)
-    link=models.CharField(max_length=500, default='')
+    picture=models.CharField(max_length=500, blank=True)
+    link=models.CharField(max_length=500, default='', blank=True)
+    image = models.ImageField(upload_to='images/', default="C:/Users/vince/Desktop/fashionist/Bilder/Logo.png")
     
     #Link zu Kleidungsstücken, z.B. Amazon
     #Likes
@@ -30,3 +31,12 @@ class About_Me(models.Model):
     hobbies=models.CharField(max_length=200, default='')
     favourite_food=models.CharField(max_length=200, default='')
     about_me=models.TextField(default='')
+
+class Events(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    event_date=models.DateField()
+    event_time=models.TimeField()
+    location=models.CharField(max_length=200, blank=True)
+    image = models.ImageField(upload_to='images/', blank=True)

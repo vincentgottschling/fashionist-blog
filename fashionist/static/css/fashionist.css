@@ -1,0 +1,207 @@
+.page-header {
+    background-color: #ffffff;
+    margin-top: 50;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #000000;
+    font-size: 36pt;
+    text-decoration: none;
+    font-family: 'Great Vibes', cursive;
+
+}
+
+
+.container {
+    margin-left: 40px;
+    padding-top: 50px;
+    width: calc(100% - 80px);
+}
+
+
+h3, h4 {
+    font-family: 'Yeseva One', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Yeseva One', cursive;
+}
+
+.date {
+    color: #828282;
+}
+
+.date-event {
+    color: orangered;
+}
+
+.time {
+    color: red;
+}
+
+.location {
+    color: darkred;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:visited {
+    color: #000000;
+    float: right;
+    font-size: 20pt;
+    margin-right: 20px;
+    margin-top: 10px;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+}
+
+.top-menu:hover {
+    color:orangered;
+}
+
+
+.post {
+    margin-bottom: 450px;
+}
+
+.post h2 a, .post h2 a:visited {
+    color: #000000;
+}
+
+.post h1 a:hover{
+    color: orangered;
+}
+
+.post h1 a {
+    color: #000000;
+    text-decoration: none;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+}
+
+/*
+.navbar {
+    color: #000000;
+    padding: -10px 0px 0px 0px;
+    top: 0px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    width: 100%;
+    
+    background-color: #ffffff;
+    z-index: 999;
+    text-align: center;
+}
+
+.navbar a {
+    color: #000000;
+    line-height:0;
+    text-decoration: none;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+    padding-top: -100;
+}
+
+.navbar a:hover{
+    color: green;
+}
+
+    */
+
+
+
+.second-last-balken{
+    background-color: #eeeeee;
+}
+
+.last-balken {
+    background-color: #000000;
+}
+
+#hr-bottom{
+    height: 0.5px;
+}
+
+#startpage-img {
+    width: 1000%;
+    margin-top:-80px;
+}
+
+.frontpage {
+
+}
+
+#image-post{
+    width=100%;
+}
+
+.img-responsive{
+    width=100%;
+}
+
+
+.last-bar a {
+    font-family: 'Yellowtail', cursive;
+    font-family: 'Parisienne', cursive;
+    color: #eeeeee;
+    text-decoration: none;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+}
+
+.last-bar a:hover {
+    color: steelblue;
+}
+
+.last-bar {
+    text-align: center;
+}
+
+post-title {
+    font-family: 'Yeseva One', cursive;
+}
+
+.text {
+    font-family: 'Yeseva One', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.new-event, .new-event:visited {
+    color: #000000;
+    float: left ;
+    font-size: 20pt;
+    margin-right: 20px;
+    margin-top: 10px;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+}
+
+.new-event:hover {
+    color: orangered;
+}
