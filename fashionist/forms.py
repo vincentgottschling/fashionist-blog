@@ -19,7 +19,8 @@ class EventsForm(forms.ModelForm):
         model = Events
         fields = ('title', 'text','event_date','event_time', 'location' ,'image')
         labels = {
-            "event_date": "Date of the Event ('DD.MM.YYYY')"
+            "event_date": "Date of the Event (dd.mm.yyyy)",
+            "event_time": "Time of the Event (hh:mm)"
         }
 
 

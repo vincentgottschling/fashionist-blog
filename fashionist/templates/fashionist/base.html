@@ -8,19 +8,21 @@
         <link href="https://fonts.googleapis.com/css?family=Parisienne|Yellowtail&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/fashionist.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto|Yeseva+One&display=swap" rel="stylesheet">
         
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+        
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+        
+        <link rel="stylesheet" href="{% static 'main/gijgo.min.css' %}">
 
+        <link rel="stylesheet" href="{% static 'css/fashionist.css' %}">
         
     
 
@@ -90,6 +92,9 @@
             <br>
             <br>
         </div> 
+        <script src="{% static 'main/jquery.min.js' %}" charset="utf-8"></script>
+        <script src="{% static 'main/gijgo.min.js' %}" charset="utf-8"></script>
+        <script type="text/javascript">$('#id_event_date').datepicker({ format: 'dd.mm.yyyy' }  );</script>
     </body>
 </html>
 <!-- Fertig? -->
