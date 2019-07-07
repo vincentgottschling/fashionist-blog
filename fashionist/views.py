@@ -8,6 +8,9 @@ from django.shortcuts import redirect
 
 def frontpage(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    query=request.GET.get("q")
+    if query:
+        posts=posts.filter(category=query)
     return render(request, 'fashionist/frontpage.html', {'posts': posts})
 
 def trends(request):

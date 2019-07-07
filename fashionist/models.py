@@ -12,6 +12,20 @@ class Post(models.Model):
     picture=models.CharField(max_length=500, blank=True)
     link=models.CharField(max_length=500, default='', blank=True)
     image = models.ImageField(upload_to='images/', default="C:/Users/vince/Desktop/fashionist/Bilder/Logo.png")
+    CATEGORY_CHOICES=[
+        ('HS','Hairstyle'),
+        ('MU','Make-Up'),
+        ('SH','Shoes'),
+        ('AC','Accessoirs'),
+        ('OD','Outfit of the Day'),
+        ('EE','Everything Else')
+    ]
+    category = models.CharField(
+        max_length=2,
+        choices=CATEGORY_CHOICES,
+        default='EE',
+    )
+
     
     #Link zu Kleidungsstücken, z.B. Amazon
     #Likes

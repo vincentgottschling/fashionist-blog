@@ -205,3 +205,46 @@ post-title {
 .new-event:hover {
     color: orangered;
 }
+
+
+.search {
+    margin-top:60px;
+    text-align: center;
+}
+
+
+select {
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: auto;
+    height: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: url(fff-0-2.png) repeat;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    outline: none;
+    color: #666;
+    background-color:#eeeeee;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    padding: 5px 15px;
+    background: #eeeeee;
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+    height:28px;
+}
+
+.img-responsive {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
