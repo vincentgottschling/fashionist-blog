@@ -73,7 +73,7 @@ h1, h2 {
 
 
 .post {
-    margin-bottom: 450px;
+    margin-bottom: 100px;
 }
 
 .post h2 a, .post h2 a:visited {
@@ -232,6 +232,37 @@ select {
     cursor: pointer;
 }
 
+
+input[type="text"], textarea,  #id_image {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 10px;
+    border: 2px solid rgb(255, 228, 108);
+    border-radius: 4px;  
+    background-color: #eeeeee;
+    color:#000000;
+    outline: none;
+  }
+
+  #id_category{
+    width: 100%;
+
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 10px;
+    border: 2px solid rgb(255, 228, 108);
+    border-radius: 4px;  
+    background-color: #eeeeee;
+    color:#000000;
+    outline: none;
+  }
+
+  input[type=text]:focus,textarea:focus {
+    background-color: rgb(211, 230, 236);
+  }
+
 input[type=submit] {
     padding: 5px 15px;
     background: #eeeeee;
@@ -248,3 +279,16 @@ input[type=submit] {
     border-radius: 5px;
 }
 
+.footer-class {
+    bottom: 0px;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+.seite {
+    position: relative;
+    min-height: 100%;
+}

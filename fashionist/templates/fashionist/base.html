@@ -29,12 +29,7 @@
 
     </head>
     <body>
-            <!--<div class="categories">-->
-                <!--<a href="/trends/">Trends</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/">Guide</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Lifestyle</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a>-->
-                <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -55,6 +50,13 @@
 
                     </div>
                 </div> 
+        <div class="seite">
+            <!--<div class="categories">-->
+                <!--<a href="/trends/">Trends</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/">Guide</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Lifestyle</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/about_me/">Über mich</a>-->
+                
                 {% if user.is_authenticated %}
                     <a href="{% url 'new_news' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
                 {% endif %}                 
@@ -81,17 +83,20 @@
             </div>
         </div>
         <br>
-        <div class="second-last-balken">
-            <br>
-            <br>
         </div>
-        <div class="last-balken">
-            <br>
-            <br>
-            <h1 class="last-bar" text-align="center"><a href="#top" class="to-top">Livia's Life</a></h1>
-            <br>
-            <br>
-        </div> 
+        <footer class="footer-class">
+            <div class="second-last-balken">
+                <br>
+                <br>
+            </div>
+            <div class="last-balken">
+                <br>
+                <br>
+                <h1 class="last-bar" text-align="center"><a href="#top" class="to-top">Livia's Life</a></h1>
+                <br>
+                <br>
+            </div> 
+        </footer>
         <script src="{% static 'main/jquery.min.js' %}" charset="utf-8"></script>
         <script src="{% static 'main/gijgo.min.js' %}" charset="utf-8"></script>
         <script type="text/javascript">$('#id_event_date').datepicker({ format: 'dd.mm.yyyy' }  );</script>
