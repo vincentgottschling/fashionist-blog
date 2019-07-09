@@ -3,5 +3,5 @@
 __pycache__
 vi_env
 db.sqlite3
-/static
+
 .DS_Store
