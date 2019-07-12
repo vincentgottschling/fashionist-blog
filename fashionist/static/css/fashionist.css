@@ -292,3 +292,7 @@ html, body {
     position: relative;
     min-height: 100%;
 }
+
+#id_frontpage_image {
+    text-align: center;
+}

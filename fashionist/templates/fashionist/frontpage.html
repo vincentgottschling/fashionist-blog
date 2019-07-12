@@ -31,7 +31,7 @@
                         <br>
                         <br>
                         {% if post.image %}
-                            <p><a href="{% url 'news_detail' pk=post.pk %}"><img src="{{post.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt"/></a></p>
+                            <p><a href="{% url 'news_detail' pk=post.pk %}" id="id_frontpage_image"><img src="{{post.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt" /></a></p>
                         {% endif %}
                     </div>
                 </div>
