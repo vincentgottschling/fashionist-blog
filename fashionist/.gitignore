@@ -1,9 +1,0 @@
-*.pyc
-*~
-__pycache__
-vi_env
-livia
-media 
-db.sqlite3
-/static
-.DS_Store
