@@ -6,7 +6,6 @@
         {% if user.is_authenticated %}
             <a class="btn btn-default" href="{% url 'edit_info' %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-        <h2>About Me</h2>
         {% if info.image %}
             <p><img src="{{info.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt" /></p>
         {% endif %}
