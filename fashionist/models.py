@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
-
+#Model zum Erstellen der Blog-Beiträge auf der Startseite
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -11,7 +11,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     picture=models.CharField(max_length=500, blank=True)
     link=models.CharField(max_length=500, default='', blank=True)
-    image = models.ImageField(upload_to='images/', default="C:/Users/vince/Desktop/fashionist/Bilder/Logo.png")
+    image = models.ImageField(upload_to='images/')
     CATEGORY_CHOICES=[
         ('HS','Hairstyle'),
         ('MU','Make-Up'),
@@ -26,11 +26,6 @@ class Post(models.Model):
         default='EE',
     )
 
-    
-    #Link zu Kleidungsstücken, z.B. Amazon
-    #Likes
-    #pictures
-
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -38,14 +33,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
+#Model zum Erstellen eines Beitrags über die Nutzerin
 class About_Me(models.Model):
-    name=models.CharField(max_length=200, default='')
-    age=models.CharField(max_length=200, default='')
-    hobbies=models.CharField(max_length=200, default='')
-    favourite_food=models.CharField(max_length=200, default='')
+    image=models.ImageField(upload_to='images/', blank=True)
     about_me=models.TextField(default='')
 
+#Model zum Erstellen von Event-Beiträge
 class Events(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)

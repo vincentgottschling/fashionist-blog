@@ -7,10 +7,12 @@
             <a class="btn btn-default" href="{% url 'edit_info' %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <h2>About Me</h2>
-        <p>name: {{info.name}}</p>
-        <p>age: {{info.age}}</p>
-        <p>hobbies: {{info.hobbies}}</p>
-        <p>favourite food: {{info.favourite_food}}</p>
-        <p>about myself: {{info.about_me}}</p>
+        {% if info.image %}
+            <p><img src="{{info.image.url}}" class="img-responsive" alt="Die Bild-Adresse oder der Pfad ist nicht korrekt" /></p>
+        {% endif %}
+        <br>
+        <br>
+
+        <h2>About myself:</h2> <p>{{info.about_me}}</p>
     </div>
 {% endblock %}

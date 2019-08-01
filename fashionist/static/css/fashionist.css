@@ -80,8 +80,17 @@ h1, h2 {
     color: #000000;
 }
 
-.post h1 a:hover{
+.post h1 a:hover, .about_me_title a:hover{
     color: orangered;
+}
+
+.about_me_title a{
+    color: #000000;
+    text-decoration: none;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
 }
 
 .post h1 a {
@@ -202,6 +211,8 @@ post-title {
     transition: color 0.5s ease-out;
 }
 
+
+/*Funktioniert nicht!*/
 .new-event:hover {
     color: orangered;
 }
